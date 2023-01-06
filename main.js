@@ -92,12 +92,13 @@ function getFunc(t, v){
 	let b = 3;
 	let c = 2;
 	let d = 4;
-	let f = a * b / Math.sqrt(a*2 * Math.sin(v)*2 + b*2 * Math.cos(v)**2)
-	let x = 0.5 * (f * (1 + Math.cos(t)) + (d*2 - c*2) * (1 - Math.cos(t)) / f) * Math.cos(v)
-    let y = 0.5 * (f * (1 + Math.cos(t)) + (d*2 - c*2) * (1 - Math.cos(t)) / f) * Math.sin(v)
-    let z = 0.5 * (f - (d*2 - c*2) / f) * Math.sin(t)
+	let f = a * b / Math.sqrt(a**2 * Math.sin(v)**2 + b**2 * Math.cos(v)**2)
+	let x = 0.5 * (f * (1 + Math.cos(t)) + (d**2 - c**2) * (1 - Math.cos(t)) / f) * Math.cos(v)
+    let y = 0.5 * (f * (1 + Math.cos(t)) + (d**2 - c**2) * (1 - Math.cos(t)) / f) * Math.sin(v)
+    let z = 0.5 * (f - (d**2 - c**2) / f) * Math.sin(t)
 	return [x/k, y/k, z/k];
 }
+
 
 function CreateSurfaceData()
 {
